@@ -31,15 +31,15 @@
 }
 
 h1 {
-  @apply text-6xl tracking-tighter leading-none
+  @apply text-3xl md:text-6xl tracking-tighter leading-none font-bold
 }
 
 h2 {
-  @apply text-3xl tracking-tighter leading-none
+  @apply text-xl md:text-3xl tracking-tighter leading-none font-bold
 }
 
 h3 {
-  @apply text-xl tracking-tighter leading-none
+  @apply text-xl tracking-tighter leading-none font-medium
 }
 
 input {
@@ -71,7 +71,7 @@ input {
 }
 
 .dark-image {
-  @apply hidden dark:block
+  @apply hidden md:dark:block
 }
 
 label {

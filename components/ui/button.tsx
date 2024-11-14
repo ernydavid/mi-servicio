@@ -29,12 +29,15 @@ export const buttonVariants = cva(
     }
   })
 
-interface Props extends HTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {}
+interface Props extends HTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+  type?: 'button' | 'reset' | 'submit' | undefined
+}
 
-export function Button ({ className, variant, size, ...props }: Props) {
+export function Button ({ className, variant, size, type, ...props }: Props) {
   return (
     <button
       className={cn(buttonVariants({ variant, size, className }))}
+      type={type}
       {...props}
     />
   )

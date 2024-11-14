@@ -1,6 +1,8 @@
+import { auth } from '@/auth'
 import { ThemeToggle } from './theme-toggle'
 
 export async function Footer () {
+  const session = await auth()
   return (
     <div className='w-full h-12 flex items-center justify-between gap-3'>
       <img
@@ -9,11 +11,8 @@ export async function Footer () {
         alt='Icon Logo'
       />
       <div className='flex items-center gap-2'>
-        <div className='w-5 h-5 bg-primary' />
-        <div className='w-5 h-5 bg-secondary' />
-        <div className='w-5 h-5 bg-muted' />
-        <div className='w-5 h-5 bg-foreground' />
-        <div className='w-5 h-5 bg-background border' />
+        <p className='text-foreground'>IsSession: {JSON.stringify(!!session?.user, null, 1)}</p>
+        <p className='text-foreground'>IsOAtuh: {JSON.stringify(!!session?.user.isOAuth, null, 1)}</p>
         <ThemeToggle />
       </div>
     </div>
